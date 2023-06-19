@@ -40,7 +40,7 @@
             {% for u in usuarios %}
             <tr>
               <td>{{ u.id }}</td>
-              <td>{{ u.nombre }}</td>
+              <td><a href="{% url 'usuario_edit' id=u.id %}">{{ u.nombre }}</a></td>
               <td>{{ u.email }}</td>
             </tr>
             {% endfor %}

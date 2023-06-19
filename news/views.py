@@ -25,3 +25,21 @@ def index_usuario(request):
 
 def create_usuario(request):
      return render(request, 'administrador/usuario/create.html')
+
+def edit_usuario(request, id):
+    usuario = Usuario.objects.get(id=id)
+
+   
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        correo = request.POST.get('correo')
+        password = request.POST.get('pass')
+
+        usuario.nombre = nombre
+        usuario.email = correo
+        usuario.password = password
+        usuario.save()
+    
+    context = {'usuario': usuario}
+
+    return render(request, 'administrador/usuario/edit.html', context)
