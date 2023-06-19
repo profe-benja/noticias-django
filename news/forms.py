@@ -5,7 +5,7 @@ from .models import *
 class UsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = ['nombre', 'correo', 'password']
+        fields = ['nombre', 'email', 'password']
 
 
 class PublicacionForm(forms.ModelForm):
