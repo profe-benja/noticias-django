@@ -8,6 +8,7 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nombre 
+    
 
 class Publicacion(models.Model):
     # id_publicacion = models.AutoField(primary_key=True)
